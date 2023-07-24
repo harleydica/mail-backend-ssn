@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: "ichsanfadhil67@gmail.com",
-        pass: "ichsanasya24",
+        user: "taufiklah87@gmail.com",
+        pass: "qgdpywolwtwafzcq",
     },
 });
 
@@ -49,6 +49,7 @@ app.post('/email/send', (req, res) => {
         console.log("MESSAGE ID: ", info.messageId);
     });
     res.status(200);
+    res.send("berhasil mengirim email");
 });
 
 app.get('/', (req, res) => {
