@@ -34,6 +34,7 @@ app.post('/email/send', (req, res) => {
     var email = req.body.email;
     var paket = req.body.paket;
     var alamat = req.body.alamat;
+    var notelp = req.body.notelp;
 
     const message = "Hi there, you were emailed me through nodemailer"
     const options = {
@@ -41,7 +42,7 @@ app.post('/email/send', (req, res) => {
         to: "ichsanfadhil67@gmail.com", // receiver email
         subject: "aloooH", // Subject line
         text: nama,
-        html: `<table>    <tr>        <td>Nama</td>        <td>Email</td>        <td>Paket</td>        <td>Alamat</td>    </tr>    <tr>        <td>${nama}</td>        <td>${email}</td>        <td>${paket}</td>        <td>${alamat}</td>    </tr></table>`,
+        html: `<table>    <tr>        <td>Nama</td>        <td>Email</td>   <td>No Telp</td>     <td>Paket</td>        <td>Alamat</td>    </tr>    <tr>        <td>${nama}</td>        <td>${email}</td>    <td>${notelp}</td>     <td>${paket}</td>        <td>${alamat}</td>    </tr></table>`,
     }
 
     SENDMAIL(options, (info) => {
