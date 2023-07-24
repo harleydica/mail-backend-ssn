@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: "taufiklah87@gmail.com",
-        pass: "qgdpywolwtwafzcq",
+        user: "ichsanfadhil67@gmail.com",
+        pass: "ichsanasya24",
     },
 });
 
@@ -38,8 +38,8 @@ app.post('/email/send', (req, res) => {
     const message = "Hi there, you were emailed me through nodemailer"
     const options = {
         from: "TESTING <sender@gmail.com>", // sender address
-        to: "taufiklah87@gmail.com", // receiver email
-        subject: "Send email in Node.JS with Nodemailer using Gmail account", // Subject line
+        to: "ichsanfadhil67@gmail.com", // receiver email
+        subject: "aloooH", // Subject line
         text: nama,
         html: `<table>    <tr>        <td>Nama</td>        <td>Email</td>        <td>Paket</td>        <td>Alamat</td>    </tr>    <tr>        <td>${nama}</td>        <td>${email}</td>        <td>${paket}</td>        <td>${alamat}</td>    </tr></table>`,
     }
