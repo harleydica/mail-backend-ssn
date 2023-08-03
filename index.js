@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import express from "express";
 import bodyParser from "body-parser";
-
+import cors from "cors"
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -27,6 +27,9 @@ const app = express();
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
+app.use(cors({
+    origin: '*'
+}));
 
 app.post('/email/send', async (req, res) => {
 
