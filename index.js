@@ -36,11 +36,11 @@ app.post('/email/send', async (req, res) => {
     var paket = req.body.paket;
     var alamat = req.body.alamat;
 
-    const message = "Hi there, you were emailed me through nodemailer"
+    const message = "PELANGGAN BARU PRISMA"
     const options = {
-        from: "TESTING <sender@gmail.com>", // sender address
-        to: "taufik@sintesa.co.id", // receiver email
-        subject: "Send email in Node.JS with Nodemailer using Gmail account", // Subject line
+        from: "PRISMA SSN <sender@gmail.com>", // sender address
+        to: "taufiklah87@gmail.com", // receiver email
+        subject: "PELANGGAN BARU PRISMA", // Subject line
         text: nama,
         html: `<table>    <tr>        <td>Nama</td>        <td>Email</td>        <td>Paket</td>        <td>Alamat</td>    </tr>    <tr>        <td>${nama}</td>        <td>${email}</td>        <td>${paket}</td>        <td>${alamat}</td>    </tr></table>`,
     }
