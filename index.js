@@ -27,9 +27,7 @@ const app = express();
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors());
 
 app.post('/email/send', async (req, res) => {
 
