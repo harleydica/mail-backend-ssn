@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
 import express from "express";
 import bodyParser from "body-parser";
-import cors from "cors"
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
@@ -28,9 +27,8 @@ const app = express();
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
-app.use(cors());
 
-app.post('/email/send', (req, res) => {
+app.post('/email/send', async (req, res) => {
 
     var nama = req.body.nama;
     var email = req.body.email;
@@ -39,23 +37,17 @@ app.post('/email/send', (req, res) => {
 
     const message = "Hi there, you were emailed me through nodemailer"
     const options = {
-        from: "SSN Pelanggan <sender@gmail.com>", // sender address
-        to: "ichsanfadhil67@gmail.com", // receiver email
-        subject: "SSN Pelanggan Baru", // Subject line
+        from: "TESTING <sender@gmail.com>", // sender address
+        to: "taufik@sintesa.co.id", // receiver email
+        subject: "Send email in Node.JS with Nodemailer using Gmail account", // Subject line
         text: nama,
         html: `<table>    <tr>        <td>Nama</td>        <td>Email</td>        <td>Paket</td>        <td>Alamat</td>    </tr>    <tr>        <td>${nama}</td>        <td>${email}</td>        <td>${paket}</td>        <td>${alamat}</td>    </tr></table>`,
     }
 
-    SENDMAIL(options, (info) => {
+    await SENDMAIL(options, (info) => {
         console.log("Email sent successfully");
         console.log("MESSAGE ID: ", info.messageId);
     });
-    res.status(200);
-    res.send("berhasil mengirim email");
-});
-
-app.get('/', (req, res) => {
-    res.send("Hello World");
     res.status(200);
 });
 
