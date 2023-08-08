@@ -45,8 +45,6 @@ app.post('/email/send', async (req, res) => {
     const message = "PELANGGAN BARU PRISMA"
     const options = {
         from: "PRISMA SSN <sender@gmail.com>", // sender address
-        // to: "ssnsalesmarketing@gmail.com", // receiver email
-        // to: "taufiklah87@gmail.com",
         to: sendemail,
         subject: "PELANGGAN BARU PRISMA", // Subject line
         text: nama,
